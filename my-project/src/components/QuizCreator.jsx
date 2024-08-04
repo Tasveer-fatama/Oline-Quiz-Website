@@ -16,8 +16,8 @@ const QuizCreator = () => {
   };
 
   return (
-    <div className="container">
-      <h2>Create an awesome quiz in minutes</h2>
+    <div className="container2">
+     
       <QuestionForm onAddQuestion={handleAddQuestion} />
       <div className="quiz-preview">
         <h3>Quiz Preview</h3>

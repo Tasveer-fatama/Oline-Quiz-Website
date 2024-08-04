@@ -25,39 +25,45 @@ const QuestionForm = ({ onAddQuestion }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Question:</label>
-        <input
-          type="text"
-          value={question}
-          onChange={(e) => setQuestion(e.target.value)}
-        />
+    <div className="container1">
+      <h2>Create a New Question</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Question:</label>
+          <input
+            type="text"
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Options:</label>
+          <input
+            type="text"
+            value={option}
+            onChange={(e) => setOption(e.target.value)}
+          />
+          <button type="button" onClick={handleAddOption}>Add Option</button>
+          <ul>
+            {options.map((opt, index) => (
+              <li key={index}>{opt}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <label>Answer:</label>
+          <input
+            type="text"
+            value={answer}
+            onChange={(e) => setAnswer(e.target.value)}
+          />
+        </div>
+        <button type="submit">Add Question</button>
+      </form>
+      <div className="quiz-preview">
+        {/* Preview of questions will go here */}
       </div>
-      <div>
-        <label>Options:</label>
-        <input
-          type="text"
-          value={option}
-          onChange={(e) => setOption(e.target.value)}
-        />
-        <button type="button" onClick={handleAddOption}>Add Option</button>
-        <ul>
-          {options.map((opt, index) => (
-            <li key={index}>{opt}</li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <label>Answer:</label>
-        <input
-          type="text"
-          value={answer}
-          onChange={(e) => setAnswer(e.target.value)}
-        />
-      </div>
-      <button type="submit">Add Question</button>
-    </form>
+    </div>
   );
 };
 
